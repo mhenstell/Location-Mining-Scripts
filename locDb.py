@@ -22,8 +22,12 @@ class locDb():
         self.conn.commit()
         self.conn.close()
     
-    def createTable(self):
-        sql = '''create table location (id integer primary key autoincrement, date text, loc text, ip text)'''
+    def createTables(self):
+        sql = '''create table location (id integer primary key autoincrement, date text, loc text, ip text, agent text)'''
+        self.execute(sql)
+        sql = '''create table users (if integer primary key autoincrement, agent text, password text, lastip text, lasttimestamp text)'''
+        self.execute(sql)
+        sql = '''insert into users values (null, "WORK", "workLoc", "128.122.170.183", 0)'''
         self.execute(sql)
         
 if __name__ == "__main__":
