@@ -21,11 +21,11 @@ class locDb():
     def close(self):
         self.conn.commit()
         self.conn.close()
-	
-	def createTable(self):
-		sql = '''create table location (id integer primary key autoincrement, date text, loc text, ip text)'''
-		self.execute(sql)
-		
+    
+    def createTable(self):
+        sql = '''create table location (id integer primary key autoincrement, date text, loc text, ip text)'''
+        self.execute(sql)
+        
 if __name__ == "__main__":
     db = locDb()
 
