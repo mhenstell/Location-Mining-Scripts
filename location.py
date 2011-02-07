@@ -4,7 +4,7 @@ import bottle
 bottle.debug(True)
 
 from bottle import route, run, response, request
-import locDb, time
+import locDb, time, sys
 
 
 
@@ -63,4 +63,4 @@ def create():
     db.createTables()
     
 
-bottle.run(host='localhost', port=8080)
+bottle.run(host=sys.argv[1], port=sys.argv[2])
